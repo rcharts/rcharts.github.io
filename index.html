@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Bootplus</title>
+      <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <!-- Le styles -->
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+      <!-- <link href="../assets/css/bootplus.css" rel="stylesheet"> -->
+      <!-- <link href="../assets/css/font-awesome.min.css" rel="stylesheet"> -->
+      <link href="https://rawgithub.com/aozora/bootplus/gh-pages/assets/css/bootplus.css" rel="stylesheet">
+      <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.css" rel="stylesheet">
+      <style type="text/css">
+      body {
+        padding-top: 10px;
+        padding-bottom: 40px;
+      }
+       .hero-unit {
+          background: #00001C url(../assets/img/cover4.jpg) no-repeat top left;
+       }
+       .hero-unit h1 {color: #FFF}
+       .hero-unit p {color: #F5F5F5}
+      </style>
+      <!-- <link href="../assets/css/bootplus-responsive.css" rel="stylesheet"> -->
+      <link href="http://cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+      <![endif]-->
+      <style>
+      .hero-unit {
+        background: darkslateblue;
+      }
+      .hero-unit .container {
+        width: 940px;
+      }
+      p {
+        text-align: justify;
+      }
+      .nav [class^="icon-"] {
+        line-height: normal;
+      }
+      </style>
+
+      <!-- Fav and touch icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+                                   
+                                   
+  </head>
+
+  <body>
+
+      <div class="navbar navbar-fixed-top">
+         <div class="navbar-inner">
+           <div class="container">
+             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <a class="brand" href="#">
+               rCharts
+             </a>
+             <div class="nav-collapse collapse">
+               <ul class="nav">
+                 <li class="active"><a href="#">Home</a></li>
+                 <li><a href="#about">About</a></li>
+                 <li><a href="http://rcharts.github.io/gallery">
+                   <i class="icon-signal"> </i> Gallery
+                 </a></li>
+                 <li class="dropdown">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <i class="icon-bookmark"></i> Libraries <b class="caret"></b>
+                   </a>
+                   <ul class="dropdown-menu">
+                     <li><a href="#">Highcharts</a></li>
+                     <li><a href="#">Morris</a></li>
+                     <li><a href="#">NVD3</a></li>
+                     <li><a href="#">Polychart</a></li>
+                     <li><a href='#'>Rickshaw</a></li>
+                     <li><a href="#">xCharts</a></li>
+                     <li class="divider"></li>
+                     <li class="nav-header">Mapping</li>
+                     <li><a href="#">Leaflet</a></li>
+                   </ul>
+                 </li>
+               </ul>
+               <!--
+               <form class="navbar-form pull-right">
+                 <input class="span2" type="text" placeholder="Email">
+                 <input class="span2" type="password" placeholder="Password">
+                 <button type="submit" class="btn btn-primary">Sign in</button>
+               </form>
+               -->
+             </div><!--/.nav-collapse -->
+           </div>
+         </div>
+       </div>
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+         <div class="container">
+           <div class='row-fluid'>
+             <div class='span6'>
+               <h1>
+                 <img height=60px width=150px src='img/slidify_logo.png'>
+               </h1>
+               <p>is an R package to create, customize and publish interactive javascript visualizations from R using a familiar 
+                 lattice style plotting interface.</p>
+               <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+             </div>
+             <div class='span6'>
+               <div id="myCarousel" class="carousel slide">
+                 <ol class="carousel-indicators">
+                   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                   <li data-target="#myCarousel" data-slide-to="1"></li>
+                   <li data-target="#myCarousel" data-slide-to="2"></li>
+                 </ol>
+                 <!-- Carousel items -->
+                 <div class="carousel-inner">
+                   <div class="active item">
+                     <img src='img/nvd3.png'>
+                     <div class="carousel-caption">
+                        <h4>NVD3</h4>
+                     </div>
+                   </div>
+                   <div class="item">
+                     <img src='img/polychart.png'>
+                     <div class="carousel-caption">
+                        <h4>Polychart</h4>
+                     </div>
+                   </div>
+                   <div class="item">
+                     <img src='img/highchart.png'>
+                     <div class="carousel-caption">
+                        <h4>Highcharts</h4>
+                     </div>
+                   </div>
+                 </div>
+                 <!-- Carousel nav -->
+                 <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                 <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+               </div>
+             </div>
+           </div>
+         </div>
+      </div>
+
+
+      <div class="container">
+
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+
+            <div class="card">
+               <h3 class="card-heading simple">Familiar Plotting Interface</h3>
+               <div class="card-body">
+                  <p>rCharts uses a plotting interface that R users are already familiar with. You can use a formula interace as used in the lattice 
+                    package, or a more traditionaly interface used with base graphics.
+                  <p>
+               </div>
+               <div class="card-actions">
+                  <button class="btn btn-block">View Details</button>
+               </div>
+            </div>
+
+        </div>
+        <div class="span4">
+
+            <div class="card">
+               <h3 class="card-heading simple">Multiple Charting Libraries</h3>
+               <div class="card-body">
+                  <p>rCharts supports multiple javascript charting libraries, each with its own strengths. 
+                    Each of these libraries has multiple customization options, most of which are supported within rCharts.
+                  <p>
+               </div>
+               <div class="card-actions">
+                  <button class="btn btn-block">View Details</button>
+               </div>
+            </div>
+
+       </div>
+        <div class="span4">
+
+            <div class="card">
+               <h3 class="card-heading simple">Easy to Share</h3>
+               <div class="card-body">
+                  <p>rCharts allows you to share your visualization in multiple ways. You can save it as a standalone page, 
+                    embed it in a shiny application, or even include it as a part of a blog post or tutorial. 
+                  <p>
+               </div>
+               <div class="card-actions">
+                  <button class="btn btn-block">View Details</button>
+               </div>
+            </div>
+
+        </div>
+      </div>
+
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+
+      </div> <!-- /container -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+      <!-- Le javascript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster 
+      <script src="../assets/js/jquery.js"></script>
+      <script src="../assets/js/bootstrap-transition.js"></script>
+      <script src="../assets/js/bootstrap-alert.js"></script>
+      <script src="../assets/js/bootstrap-modal.js"></script>
+      <script src="../assets/js/bootstrap-dropdown.js"></script>
+      <script src="../assets/js/bootstrap-scrollspy.js"></script>
+      <script src="../assets/js/bootstrap-tab.js"></script>
+      <script src="../assets/js/bootstrap-tooltip.js"></script>
+      <script src="../assets/js/bootstrap-popover.js"></script>
+      <script src="../assets/js/bootstrap-button.js"></script>
+      <script src="../assets/js/bootstrap-collapse.js"></script>
+      <script src="../assets/js/bootstrap-carousel.js"></script>
+      <script src="../assets/js/bootstrap-typeahead.js"></script>
+      -->
+
+   </body>
+</html>

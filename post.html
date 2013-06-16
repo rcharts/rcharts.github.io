@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>rCharts</title>
+      <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <!-- Le styles -->
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+      <!-- <link href="../assets/css/bootplus.css" rel="stylesheet"> -->
+      <!-- <link href="../assets/css/font-awesome.min.css" rel="stylesheet"> -->
+      <link href="https://rawgithub.com/aozora/bootplus/gh-pages/assets/css/bootplus.css" rel="stylesheet">
+      <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.css" rel="stylesheet">
+      <link rel="icon" type="image/png" href="img/slidify_logo_notext.png">
+      <style type="text/css">
+      body {
+        padding-top: 10px;
+        padding-bottom: 40px;
+      }
+       .hero-unit {
+          background: #00001C url(../assets/img/cover4.jpg) no-repeat top left;
+       }
+       .hero-unit h1 {color: #FFF}
+       .hero-unit p {color: #F5F5F5}
+      </style>
+      <!-- <link href="../assets/css/bootplus-responsive.css" rel="stylesheet"> -->
+      <link href="http://cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+      <link href="docs.css" rel="stylesheet">
+
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+      <![endif]-->
+      <style>
+      .hero-unit {
+        background: darkslateblue;
+      }
+      .hero-unit .container {
+        width: 940px;
+      }
+      p {
+        text-align: justify;
+      }
+      .nav [class^="icon-"] {
+        line-height: normal;
+      }
+      </style>
+
+      <!-- Fav and touch icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+                                   
+                                   
+  </head>
+
+  <body>
+
+      <div class="navbar navbar-fixed-top">
+         <div class="navbar-inner">
+           <div class="container">
+             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <a class="brand" href="#">
+               rCharts
+             </a>
+             
+             <iframe class="pull-right" style="margin-top:10px;" src="http://ghbtns.com/github-btn.html?user=ramnathv&repo=rCharts&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+            <iframe class="pull-right" style="margin-top:10px;" src="http://ghbtns.com/github-btn.html?user=ramnathv&repo=rCharts&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+            
+             <div class="nav-collapse collapse">
+               <ul class="nav">
+                 <li class="active"><a href="index.html">
+                   <i class="icon-home"> </i>Home
+                 </a></li>
+                 <li><a href="http://ramnathv.github.io/rCharts">
+                   <i class="icon-leaf"> </i> Quick Start
+                 </a></li>
+                 <li><a href="http://rcharts.github.io/gallery">
+                   <i class="icon-signal"> </i> Gallery
+                 </a></li>
+                 <li class="dropdown">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <i class="icon-bookmark"></i> Libraries <b class="caret"></b>
+                   </a>
+                   <ul class="dropdown-menu">
+                     <li><a href="#">Highcharts</a></li>
+                     <li><a href="#">Morris</a></li>
+                     <li><a href="#">NVD3</a></li>
+                     <li><a href="#">Polychart</a></li>
+                     <li><a href='#'>Rickshaw</a></li>
+                     <li><a href="#">xCharts</a></li>
+                     <li class="divider"></li>
+                     <li class="nav-header">Mapping</li>
+                     <li><a href="#">Leaflet</a></li>
+                   </ul>
+                 </li>
+               </ul>
+             </div><!--/.nav-collapse -->
+           </div>
+         </div>
+       </div>
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="container">
+
+        <!-- Docs nav
+        ================================================== -->
+        <div class="row">
+          <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+              <li><a href="#dropdowns"> Dropdowns</a></li>
+              <li><a href="#buttonGroups"> Button groups</a></li>
+              <li><a href="#buttonDropdowns"> Button dropdowns</a></li>
+              <li><a href="#navs"> Navs</a></li>
+              <li><a href="#navbar"> Navbar</a></li>
+              <li><a href="#breadcrumbs"> Breadcrumbs</a></li>
+              <li><a href="#pagination"> Pagination</a></li>
+              <li><a href="#labels-badges"> Labels and badges</a></li>
+              <li><a href="#typography"> Typography</a></li>
+              <li><a href="#thumbnails"> Thumbnails</a></li>
+              <li><a href="#alerts"> Alerts</a></li>
+              <li><a href="#progress"> Progress bars</a></li>
+              <li><a href="#media"> Media object</a></li>
+              <li><a href="#misc"> Misc</a></li>
+            </ul>
+          </div>
+          <div class="span9">
+            <section id="overview">
+              <div class="page-header">
+               <h1> Tutorial </h1>
+              </div>
+              
+            </section>
+          </div>
+        </div>
+
+  
+
+      </div> <!-- /container -->
+   </body>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</html>

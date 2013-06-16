@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>rCharts</title>
+      <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <!-- Le styles -->
+      <link rel='stylesheet' href='http://rawgithub.com/rcharts/gallery/gh-pages/style.css'>
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+      <!-- <link href="../assets/css/bootplus.css" rel="stylesheet"> -->
+      <!-- <link href="../assets/css/font-awesome.min.css" rel="stylesheet"> -->
+      <link href="https://rawgithub.com/aozora/bootplus/gh-pages/assets/css/bootplus.css" rel="stylesheet">
+      <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.css" rel="stylesheet">
+      <link rel="icon" type="image/png" href="img/slidify_logo_notext.png">
+      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+      <style type="text/css">
+      body {
+        padding-top: 10px;
+        padding-bottom: 40px;
+      }
+       .hero-unit {
+          background: #00001C url(../assets/img/cover4.jpg) no-repeat top left;
+       }
+       .hero-unit h1 {color: #FFF}
+       .hero-unit p {color: #F5F5F5}
+      </style>
+      <!-- <link href="../assets/css/bootplus-responsive.css" rel="stylesheet"> -->
+      <link href="http://cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+      <![endif]-->
+      <style>
+      .hero-unit {
+        background: darkslateblue;
+      }
+      .hero-unit .container {
+        width: 940px;
+      }
+      p {
+        text-align: justify;
+      }
+      .nav [class^="icon-"] {
+        line-height: normal;
+      }
+      .menu1-container{
+        padding-top: 60px;
+      }
+      .menu2-container {
+        padding-top: 80px;
+      }
+      body {
+        background: white;
+      }
+      .gallery {
+        padding-top: 10px;
+        padding-left: 20px;
+      }
+      </style>
+
+      <!-- Fav and touch icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+      
+                                   
+                                   
+  </head>
+
+  <body>
+
+      <div class="navbar navbar-fixed-top">
+         <div class="navbar-inner">
+           <div class="container">
+             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <a class="brand" href="#">
+               rCharts
+             </a>
+             
+             <iframe class="pull-right" style="margin-top:10px;" src="http://ghbtns.com/github-btn.html?user=ramnathv&repo=rCharts&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+            <iframe class="pull-right" style="margin-top:10px;" src="http://ghbtns.com/github-btn.html?user=ramnathv&repo=rCharts&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+            
+             <div class="nav-collapse collapse">
+               <ul class="nav">
+                 <li class="active"><a href="index.html">
+                   <i class="icon-home"> </i>Home
+                 </a></li>
+                 <li><a href="http://ramnathv.github.io/rCharts">
+                   <i class="icon-leaf"> </i> Quick Start
+                 </a></li>
+                 <li><a href="gallery.html">
+                   <i class="icon-signal"> </i> Gallery
+                 </a></li>
+                 <li class="dropdown">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <i class="icon-bookmark"></i> Libraries <b class="caret"></b>
+                   </a>
+                   <ul class="dropdown-menu">
+                     <li><a href="#">Highcharts</a></li>
+                     <li><a href="#">Morris</a></li>
+                     <li><a href="#">NVD3</a></li>
+                     <li><a href="#">Polychart</a></li>
+                     <li><a href='#'>Rickshaw</a></li>
+                     <li><a href="#">xCharts</a></li>
+                     <li class="divider"></li>
+                     <li class="nav-header">Mapping</li>
+                     <li><a href="#">Leaflet</a></li>
+                   </ul>
+                 </li>
+               </ul>
+               <!--
+               <form class="navbar-form pull-right">
+                 <input class="span2" type="text" placeholder="Email">
+                 <input class="span2" type="password" placeholder="Password">
+                 <button type="submit" class="btn btn-primary">Sign in</button>
+               </form>
+              
+               -->
+               
+             </div><!--/.nav-collapse -->
+           </div><!--/.container -->
+         </div><!--/.nav-inner -->
+         
+       <div class="gallery">
+           <div id="nav">
+               <div class="menu1-container"></div>
+               <div class="menu2-container">
+                   <input type="text" class="menu2-search" />
+               </div>
+           </div>
+           <div id="list">
+               <div class="menu3-container"></div>
+           </div>
+       </div>
+    </div>
+
+           <script type="text/javascript">
+
+           d3.select('.about-link').on('click', function(d, i){
+               d3.event.preventDefault();
+               d3.select('.about-box').style({display: 'block'});
+           })
+           d3.select('.about-close').on('click', function(d, i){                   d3.select('.about-box').style({display: 'none'}); });
+
+           var vizTypeScale = d3.scale.category20c();
+           var splitChar = '; ';
+           var json;
+
+           var data1 = {
+               href: function(d, i){return '#'+ d.dimension+'=all';},
+               html: function(d, i){ return d.displayName;}
+           };
+
+           var data2 = {
+               href: function(d, i){ return '#'+ d.dimension+'='+d.key; },
+               html: function(d, i){ return d.key+' <span class="value">'+ d.value+'</span>';}
+           };
+
+           var data3 = {
+               href: function(d, i){return d.url;},
+               html: function(d, i){
+                   var content = d.title;
+                   if(d.author) content += ' '+'<span class="author">'+d.author+'</span>';
+                   if(d.thumbnail) content += "<br /> <img src='"+d.thumbnail+"' class='thumbnail'/><br />";
+                   return content;}
+           };
+
+           var menu3Width = window.innerWidth - 300; // #nav width
+           var numInOneScreen = Math.floor(menu3Width / 220) * Math.ceil(document.height / 250); // menu3 li width
+           var numInView = numInOneScreen;
+
+           d3.csv('https://docs.google.com/spreadsheet/pub?key=0AovoNzJt5GetdEhQVDgyYXpJMnZ2M2J2YmtvX0I5Snc&output=csv', function(error, _json){
+       //    d3.csv('d3gallery_feb282013.csv', function(error, _json){
+               json = _json;
+               buildList(dataTransformMenu1(), '.menu1-container', data1);
+               buildList(dataTransformMenu2('visualizationType'), '.menu2-container', data2);
+       //        buildList(dataView(dataTransformMenu3('title', 'all'), numInView), '.menu3-container', data3);
+               processLocationHash();
+           });
+
+           function dataTransformMenu1(){
+               //TODO: change in spreadsheet
+               var dimensionsMap = {author: 'Author', documentType: 'Format', sourceName:
+                       'Source', visualizationType: 'Visualization', technology: 'Tag', title: 'Title', url: 'URL'};
+               return d3.keys(dimensionsMap).map(function(d, i){return {dimension: d, displayName: dimensionsMap[d]};});
+           }
+
+           function dataTransformMenu2(dimension, filter){
+               var splitted = d3.merge(json.map(function(d, i){
+                   return splitter(d[dimension]);
+               }));
+               var filtered = (filter) ? splitted.filter(function(d, i){ return d.toLowerCase().indexOf(filter.toLowerCase()) != -1; }) : splitted;
+               var unemptied = filtered.map(function(d, i){return (d == '') ? 'untagged' : d;});
+               var grouped = groupCount(unemptied);
+               var prepared = d3.entries(grouped).map(function(d, i){
+                       d.dimension = dimension;
+                       return d;
+                   });
+               var sorted = prepared.sort(function(a, b){return b.value - a.value});
+               return sorted;
+           }
+
+           function splitter(data){
+               return (data.indexOf(splitChar) !== -1) ? data.split(splitChar) : data;
+           }
+
+           function groupCount(arr) {
+               var uniques = {}, val;
+               var dups = {};
+               for (var i = 0, len = arr.length; i < len; i++) {
+                   val = arr[i];
+                   if (val in uniques) {
+                       uniques[val]++;
+                       dups[val] = uniques[val];
+                   } else uniques[val] = 1;
+               }
+       //        return(dups);
+               return(uniques);
+           }
+
+           var cachedData;
+           function dataTransformMenu3(dimension, value){
+               var filtered = json.filter(function(d, i){
+                   var splitted = splitter(d[dimension]);
+                   if (value == 'all') return true;
+                   else if(value == 'untagged') return (splitted == '');
+                   //TODO: use the grouped data instead
+                   else if(splitted.indexOf(value) >= 0) return true;
+                   else return false;
+               });
+               var sorted = filtered.sort(function(a, b){
+                       return (a.thumbnail == '') - (b.thumbnail == '');
+                   });
+               cachedData = sorted;
+               return sorted;
+           }
+
+           function dataView(data, num){
+               return data.slice(0, num);
+           }
+
+           function buildList(data, containerSelector, content){
+               d3.select(containerSelector).selectAll("li.entry").remove();
+               updateList(data, containerSelector, content);
+           }
+
+           function updateList(data, containerSelector, content){
+               var entries = d3.select(containerSelector)
+                   .selectAll("li.entry")
+                   .data(data)
+                   .enter().append("li")
+                   .attr('class', 'entry')
+                   .append('a')
+                   .attr('href', content.href)
+                   .html(content.html);
+           }
+
+           d3.select('.menu2-search')
+               .on('change', function(d, i){ filterList(this.value); })
+               .on('keyup', function(d, i){ filterList(this.value); });
+           d3.select('body').on('mouseover', function(){
+                   if (d3.event.target.nodeName == 'A') d3.select('.menu2-search').node().blur();
+               });
+
+           function filterList(value){
+               var dimension = window.location.hash.substring(1).split('=')[0] || 'visualizationType';
+               buildList(dataTransformMenu2(dimension, value), '.menu2-container', data2);
+           }
+
+           function processLocationHash(){
+               document.body.scrollTop = document.documentElement.scrollTop = 0;
+               numInView = numInOneScreen;
+               if(window.location.hash) {
+                   var hash = window.location.hash.substring(1);
+                   var hashSplit = hash.split('=');
+                   if(hashSplit[1] == 'all') buildList(dataTransformMenu2(hashSplit[0]), '.menu2-container', data2);
+                   buildList(dataView(dataTransformMenu3(hashSplit[0], hashSplit[1]), numInView), '.menu3-container', data3);
+               }else{
+                   buildList(dataView(dataTransformMenu3('title', 'all'), numInView), '.menu3-container', data3);
+               }
+           }
+
+           d3.select(window).on('hashchange', function () {
+               processLocationHash();
+           });
+
+           d3.select(window).on('scroll', function(d, i){
+               if(document.body.scrollTop == document.height -  window.innerHeight){
+                   numInView += numInOneScreen;
+                   updateList(dataView(cachedData, numInView), '.menu3-container', data3);
+               }
+           });
+
+       </script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+   </body>
+</html>

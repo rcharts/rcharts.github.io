@@ -61,6 +61,8 @@ This application uses <a href='http://opencpu.org'>OpenCPU</a> to call R, <a hre
       </div><br/>
     <input type='submit' value='Submit' 
       class='btn btn-success' ng-click='makeChart()' />
+    <a class='btn btn-danger' id='download' download='chart.html' style='display:none'
+      ng-href='{{dnlink}}'><span class="glyphicon glyphicon-download"></span> Download</a>
   </div>
   <div class='col-lg-8'>
       <div id='loading' style='display:none;'>
@@ -109,7 +111,11 @@ myApp.controller('MainCtrl', function($scope, $http){
         text: $scope.code   
      }, function(session){
        $("#loading").hide()
-       $("#output").attr('src', session.getLoc() + "files/output.html");     
+       $("#output").attr('src', session.getLoc() + "files/output.html");  
+       $("#download").show()
+       $scope.$apply(function(){
+         $scope.dnlink = session.getLoc() + "files/output.html"
+       })
      }).fail(function(text){
       alert("Error: " + req.responseText);
      });  
@@ -122,6 +128,7 @@ myApp.controller('MainCtrl', function($scope, $http){
    $scope.$watch('gist', function(newGist){
      $scope.getCode(newGist.id)
      $("#output").attr('src', "")
+     $("#download").hide()
    })
 })
 

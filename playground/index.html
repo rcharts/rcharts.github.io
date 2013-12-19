@@ -63,7 +63,11 @@ This application uses <a href='http://opencpu.org'>OpenCPU</a> to call R, <a hre
       class='btn btn-success' ng-click='makeChart()' />
   </div>
   <div class='col-lg-8'>
-      <iframe id='output' seamless></iframe>
+      <div id='loading' style='display:none;'>
+      <img src="http://i.imgur.com/dLNEcOB.gif"></img>   
+    </div>
+       <iframe id='output' seamless scrolling = "no" frameborder = "0"
+         allowTransparency = "true"></iframe>
   </div>
 </div>
 
@@ -100,9 +104,11 @@ myApp.controller('MainCtrl', function($scope, $http){
     }
    
    $scope.makeChart = function(){
+        $("#loading").show()
         var req = ocpu.call("make_chart", {
         text: $scope.code   
      }, function(session){
+       $("#loading").hide()
        $("#output").attr('src', session.getLoc() + "files/output.html");     
      }).fail(function(text){
       alert("Error: " + req.responseText);
@@ -114,7 +120,8 @@ myApp.controller('MainCtrl', function($scope, $http){
      useWrapMode : true
    }
    $scope.$watch('gist', function(newGist){
-     $scope.getCode(newGist.id)     
+     $scope.getCode(newGist.id)
+     $("#output").attr('src', "")
    })
 })
 

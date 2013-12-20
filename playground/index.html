@@ -106,6 +106,7 @@ myApp.controller('MainCtrl', function($scope, $http){
     }
    
    $scope.makeChart = function(){
+        $("#output").attr('src', '')
         $("#loading").show()
         var req = ocpu.call("make_chart", {
         text: $scope.code   

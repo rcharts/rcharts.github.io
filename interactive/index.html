@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Try rCharts Online!</title>
+      <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+      <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+   <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.js"></script>
+      <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script type='text/javascript' src="https://public.opencpu.org/js/archive/opencpu-0.4.js"></script>
+      <script type='text/javascript' src="http://slidify.github.io/ile/libraries/widgets/interactive/js/ace/js/ace.js"></script>
+      <script type='text/javascript' src="http://angular-ui.github.io/ui-ace/build/ui-ace.js"></script>
+      <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+  
+  <style type='text/css'>
+    @import url(http://fonts.googleapis.com/css?family=Lora|Lato);
+h2 {
+   font-family: Lato;   
+}
+p {
+  font-family: "Lora";
+  text-align: justify;
+  line-height: 22px;
+}
+.ace_editor  {
+  height : 200px;
+}
+#output {
+  width: 100%;
+  height: 500px;
+}
+
+  </style>
+  
+</head>
+<body ng-app="myApp">
+  <div class='container' ng-controller='MainCtrl'>
+  <div class='row' id='main'>
+     <div class='col-lg-12'>
+      <h2>Try rCharts Online</h2>
+    <p>
+      <span class='label label-default'>OpenCPU</span>
+      <span class='label label-success'>AngularJS</span>
+      <span class='label label-danger'>rCharts</span>
+    </p>
+         <div class='alert alert-success'>
+             <button class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</button>
+         <p>This is an interactive playground to try <a href='http://rcharts.io'>rCharts</a> online. You can select different examples, play with the code, or even type in your own before hitting the submit button to render the chart.
+This application uses <a href='http://opencpu.org'>OpenCPU</a> to call R, <a href='http://angularjs.org'>AngularJS</a> for reactive bindings and the  the <a href='ace.c9.io'>Ace Editor</a> along with the <a href='http://angular-ui.github.io/ui-ace/'>Angular Ace module</a> for editing code.</p>
+         </div>
+      </div>
+    </div>
+  <div class='col-lg-4'>
+     <pre>{{ gistId2 }}</pre>
+     <div class='control-group'>
+         <label>Select Example</label>
+          <select ng-model='example' ng-options='example.title for example in examples'
+           class='form-control'>
+          </select><br/><br/>
+     </div>
+     <div ng-model='exampleCode' ui-ace="aceOptions">{{ exampleCode }}
+      </div><br/>
+    <input type='submit' value='Submit' 
+      class='btn btn-success' ng-click='makeChart()' />
+    <a class='btn btn-danger' id='download' download='chart.html' style='display:none'
+      ng-href='{{dnlink}}'><span class="glyphicon glyphicon-download"></span> Download</a>
+  </div>
+  <div class='col-lg-8'>
+      <div id='loading' style='display:none;'>
+      <img src="http://i.imgur.com/dLNEcOB.gif"></img>   
+    </div>
+       <iframe id='output' seamless scrolling = "no" frameborder = "0"
+         allowTransparency = "true"></iframe>
+  </div>
+</div>
+
+
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+
+ocpu.seturl("//public.opencpu.org/ocpu/github/rcharts/rCharts/R")
+
+var myApp = angular.module('myApp', [
+  'ngRoute', 
+  'ui.ace',
+  'AppControllers'
+])
+
+// myApp.config(function($routeProvider){
+//   $routeProvider.
+//     when('#/gist/:gistId', {
+//       controller: 'MainCtrl'
+//     }).
+//     otherwise({
+//       redirectTo: '/'
+//     })
+// })
+
+var AppControllers = angular.module('AppControllers', [])
+
+AppControllers.controller('MainCtrl', 
+  function($scope, $http, $routeParams, $location){
+    $scope.gistId2 = $location.path().substring(1)
+    $scope.gistId = $location.path().substring(1) || 8063480
+    $.getJSON('https://api.github.com/gists/' + $scope.gistId)
+      .success(function(result){
+        $scope.$apply(function(){
+          $scope.files = result.files
+          $scope.examples = JSON.parse($scope.files['examples.json'].content)
+          $scope.example = $scope.examples[0]
+        })
+      })
+  
+   
+    $scope.$watch('example', function(newExample){
+      $scope.example = newExample
+      $scope.exampleCode = $scope.files[newExample.file].content
+      $("#output").attr('src', "")
+      $("#download").hide()
+    })
+  
+  
+   $scope.makeChart = function(){
+        $("#output").attr('src', '')
+        $("#loading").show()
+        var req = ocpu.call("make_chart", {
+        text: $scope.exampleCode   
+     }, function(session){
+       $("#loading").hide()
+       $("#output").attr('src', session.getLoc() + "files/output.html");  
+       $("#download").show()
+       $scope.$apply(function(){
+         $scope.dnlink = session.getLoc() + "files/output.html"
+       })
+     }).fail(function(text){
+      alert("Error: " + req.responseText);
+     });  
+   }
+   
+   $scope.aceOptions = {
+     theme: 'solarized_dark',
+     mode: 'r',
+     useWrapMode : true
+   }
+ 
+})
+
+
+//]]>  
+
+</script>
+
+
+</body>
+
+
+</html>
